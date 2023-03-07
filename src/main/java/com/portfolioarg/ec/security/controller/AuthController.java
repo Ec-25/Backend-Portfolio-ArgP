@@ -1,7 +1,7 @@
 package com.portfolioarg.ec.security.controller;
 
-import java.util.HashSet;
-import java.util.Set;
+// import java.util.HashSet;
+// import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,7 +11,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.password.PasswordEncoder;
+// import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,31 +21,32 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.portfolioarg.ec.security.dto.JwtDto;
 import com.portfolioarg.ec.security.dto.LoginUser;
-import com.portfolioarg.ec.security.dto.CreateUser;
-import com.portfolioarg.ec.security.entity.Rol;
-import com.portfolioarg.ec.security.entity.User;
-import com.portfolioarg.ec.security.enums.RolName;
-import com.portfolioarg.ec.security.service.RolService;
-import com.portfolioarg.ec.security.service.UserService;
+// import com.portfolioarg.ec.security.dto.CreateUser;
+// import com.portfolioarg.ec.security.entity.Rol;
+// import com.portfolioarg.ec.security.entity.User;
+// import com.portfolioarg.ec.security.enums.RolName;
+// import com.portfolioarg.ec.security.service.RolService;
+// import com.portfolioarg.ec.security.service.UserService;
 import com.portfolioarg.ec.security.jwt.JwtProvider;
 
 import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = { "https://fronted-portfolioarg.web.app", "http://localhost:4200" })
+@CrossOrigin(origins = { "https://estefano-portfolio.web.app", "http://localhost:4200" })
 public class AuthController {
-    @Autowired
-    PasswordEncoder passwordEncoder;
+    // @Autowired
+    // PasswordEncoder passwordEncoder;
     @Autowired
     AuthenticationManager authenticationManager;
-    @Autowired
-    UserService userService;
-    @Autowired
-    RolService rolService;
+    // @Autowired
+    // UserService userService;
+    // @Autowired
+    // RolService rolService;
     @Autowired
     JwtProvider jwtProvider;
 
+    /* 
     @PostMapping("/create")
     public ResponseEntity<?> create(@Valid @RequestBody CreateUser newUser, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
@@ -70,6 +71,7 @@ public class AuthController {
 
         return new ResponseEntity<>(new Msg("Saved user"), HttpStatus.CREATED);
     }
+    */
 
     @PostMapping("/login")
     public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUser loginUser, BindingResult bindingResult) {
